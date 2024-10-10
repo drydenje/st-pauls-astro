@@ -1,0 +1,12 @@
+---
+import { Picture } from 'astro:assets';
+import HeroImage from '../assets/images/church-exterior.jpg'
+---
+
+<header class="hero xfull-bleed">
+  <div class="hero__content">
+    <h1>St. Paul's Presbyterian Church</h1>
+    <p>2600 Headon Forest Drive, Burlington, Ontario</p>
+  </div>
+  <Picture class="hero__image"src={HeroImage} formats={['avif', 'webp', 'jpg']} alt="The exterior of St. Paul's Presbyterian Church." />
+</header>
