@@ -5,7 +5,7 @@
   --color-dark: #252525;
   --color-light: #ffffff;
   --color-mid: #555555;
-  --gutter: 1.5rem;
+  --gutter: 3rem;
 }
 
 body {
@@ -13,7 +13,8 @@ body {
   color: var(--color-dark);
   font-family: var(--font-base);
   margin: 0;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  // width: 100vw;
 }
 
 a:not([class]) {
@@ -132,32 +133,93 @@ nav > ul {
   max-width: 100vw;
 } */
 /* End of Hero styling */
+.content-grid {
+  --padding-inline: 1rem;
+  --content-max-width: 900px;
+  --breakout-max-width: 1200px;
 
-.hero {
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
   display: grid;
-  grid-template-areas: "hero";
-  height: 65vh;
-  max-height: 600px;
-  align-items: center;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    )
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
 }
 
-.hero > * {
-  grid-area: hero;
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
 }
 
-.hero__content {
-  margin-left: 5%;
-  max-width: 35%;
-  min-width: 30ch;
+.content-grid > .breakout {
+  grid-column: breakout;
 }
 
-.hero__image {
-  justify-content: end;
+.content-grid > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+  background-color: blue;
 }
 
-.hero__image {
+img.full-width {
+  width: 100%;
+  max-height: 45vh;
   object-fit: cover;
-  object-position: 5vw -5vmin;
-  height: min(65vh, 600px);
-  width: 60%;
 }
+
+// $primary: yellow;
+
+// .hero {
+//   border: 1px solid blue;
+//   display: grid;
+//   grid-template-areas: "hero";
+//   height: 65vh;
+//   max-height: 600px;
+//   align-items: center;
+// }
+
+// .hero > * {
+//   grid-area: hero;
+// }
+
+// .hero__content {
+//   border: 1px solid red;
+//   margin: 1rem 0 1rem 5%;
+//   max-width: 35%;
+//   min-width: 30ch;
+//   z-index: 1;
+//   // background-color: rgba(mix(#fff, $primary, 97%), 0.8);
+//   border-radius: 1rem;
+//   padding: 0.5rem 0.5rem 0.5rem 0;
+
+//   h1 {
+//     font-size: 3rem;
+//     color: #3c87b3;
+//     font-weight: 500;
+//     margin: 0 0 1rem;
+//   }
+
+//   p {
+//     font-size: 1.75rem;
+//     color: scale-color($primary, $lightness: -5%, $saturation: -60%);
+//   }
+// }
+
+// .hero__image {
+//   justify-content: end;
+//   object-fit: cover;
+//   object-position: 5vw -5vmin;
+//   height: min(65vh, 600px);
+//   width: 60%;
+// }
