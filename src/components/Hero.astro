@@ -3,17 +3,11 @@ import { Image } from 'astro:assets';
 // import { Picture } from 'astro:assets';
 import HeroImage from '../assets/images/church-exterior.jpg'
 ---
-<!-- full-bleed -->
-<header class="content-grid">
-  <!-- <section class="full-width"> -->
-    <!-- <div class="hero__content"> -->
-      <!-- <h1>St. Paul's Presbyterian Church</h1> -->
-      <!-- <p>2600 Headon Forest Drive, Burlington, Ontario</p> -->
-    <!-- </div> -->
-    <!-- <div>test</div> -->
-    <Image class="full-width" src={HeroImage} alt="The exterior of St. Paul's Presbyterian Church." />
-  <!-- </section> -->
-  <!-- <div class="hero__image"> -->
-    <!-- <Picture class="hero__image" src={HeroImage} formats={['avif', 'webp', 'jpg']} alt="The exterior of St. Paul's Presbyterian Church." /> -->
-  <!-- </div> -->
+
+<header class="hero">
+    <div class="hero__content">
+      <h1>St. Paul's Presbyterian Church</h1>
+      <p>2600 Headon Forest Drive, Burlington, Ontario</p>
+    </div>
+    <Image class="hero__image" src={HeroImage} alt="The exterior of St. Paul's Presbyterian Church." />
 </header>
