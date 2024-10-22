@@ -1,13 +1,15 @@
 ---
+import Navigation from '../layouts/Navigation.astro';
 import { Image } from 'astro:assets';
 // import { Picture } from 'astro:assets';
 import HeroImage from '../assets/images/church-exterior.jpg'
 ---
 
 <header class="hero">
-    <div class="hero__content">
-      <h1>St. Paul's Presbyterian Church</h1>
-      <p>2600 Headon Forest Drive, Burlington, Ontario</p>
-    </div>
-    <Image class="hero__image" src={HeroImage} alt="The exterior of St. Paul's Presbyterian Church." />
+  <Navigation />
+  <Image class="hero__image" src={HeroImage} alt="The exterior of St. Paul's Presbyterian Church." />
+  <div class="hero__content">
+    <h1>St. Paul's Presbyterian Church</h1>
+    <p>2600 Headon Forest Drive, Burlington, Ontario</p>
+  </div>
 </header>

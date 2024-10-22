@@ -4,7 +4,7 @@
     sans-serif;
   --color-dark: #252525;
   --color-light: #ffffff;
-  --color-mid: #555555;
+  --color-mid: #0f416f;
   --gutter: 3rem;
 }
 
@@ -61,6 +61,8 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-self: flex-start;
+  z-index: 1;
 }
 
 nav > ul {
@@ -202,7 +204,8 @@ $primary: yellow;
   // background-color: rgba(mix(#fff, $primary, 97%), 0.8);
   border-radius: 1rem;
   padding: 0.5rem 0.5rem 0.5rem 0;
-  justify-self: flex-start;
+  justify-self: flex-end;
+  margin-right: 5rem;
 
   h1 {
     font-size: 3rem;
@@ -221,8 +224,8 @@ $primary: yellow;
   // justify-content: end;
   justify-self: end;
   object-fit: cover;
-  object-position: 5vw -5vmin;
+  // object-position: 5vw -5vmin;
   height: min(65vh, 600px);
   max-height: 700px;
-  width: 60%;
+  // width: 60%;
 }
