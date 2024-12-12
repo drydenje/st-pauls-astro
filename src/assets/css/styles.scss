@@ -196,7 +196,7 @@ $primary: yellow;
 }
 
 .hero__content {
-  border: 1px solid red;
+  border: 1px solid $primary;
   margin: 1rem 0 1rem 5%;
   max-width: 35%;
   min-width: 30ch;
@@ -216,7 +216,7 @@ $primary: yellow;
 
   p {
     font-size: 1.75rem;
-    color: scale-color($primary, $lightness: -5%, $saturation: -60%);
+    // color: color.scale($primary, $lightness: -5%, $saturation: -60%);
   }
 }
 
