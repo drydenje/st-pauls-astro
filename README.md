@@ -1,6 +1,10 @@
 # Astro Starter Kit: Basics
 
 ```sh
+  "decap-cms-app": "^3.3.3",
+```
+
+```sh
 npm create astro@latest -- --template basics
 ```
 
